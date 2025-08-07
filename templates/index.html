@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KMeans Clustering</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>KMeans Clustering</h1>
+        <form method="post">
+            <label>Feature 1:</label>
+            <input type="number" name="feature1" step="any" required><br>
+            <label>Feature 2:</label>
+            <input type="number" name="feature2" step="any" required><br>
+            <input type="submit" value="Predict Cluster">
+        </form>
+
+        {% if prediction is not none %}
+            <h2>Predicted Cluster: {{ prediction }}</h2>
+            <img src="{{ img_path }}" alt="Cluster Plot" width="500">
+        {% endif %}
+    </div>
+</body>
+</html>
